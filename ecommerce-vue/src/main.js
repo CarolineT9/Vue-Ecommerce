@@ -9,7 +9,8 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 //Vue Router
 import router from './router'
-
+//icons
+import '@mdi/font/css/materialdesignicons.css'
 
 const vuetify = createVuetify({
     components,
