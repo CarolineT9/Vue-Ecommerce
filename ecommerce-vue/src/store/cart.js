@@ -13,17 +13,26 @@ export const useCartStore = defineStore('cart', {
           count += detail.quantity
       })
       return count
+    },
+    totalAmount: (state) => {
+      let total = 0
+      state.details.forEach(d => {
+       total += d.product.price * d.quantity
+       
+    })
+    return total
+
     }
   },
   actions: {
     //função para adicionar o produto ao carrinho de compra
-    addProduct(productId) {
-      const detailFound = this.details.find(d => d.id === productId)
+    addProduct(product) {
+      const detailFound = this.details.find(d => d.product.id === product.id)
       if (detailFound) {
         detailFound.quantity += 1
       } else {
         this.details.push({
-          id: productId,
+          product,
           quantity: 1
         })
       }
@@ -31,19 +40,19 @@ export const useCartStore = defineStore('cart', {
     //função para deletar o produto do carrinho de compras
     deleteProduct(productId){
     
-      const index = this.details.findIndex(d => d.id === productId)
+      const index = this.details.findIndex(d => d.product.id === productId)
       this.details.splice(index, 1)
     },
     //função que aumenta quantidade de produto no carrinho
     increment(productId){
-      const detailFound = this.details.find(d => d.id === productId)
+      const detailFound = this.details.find(d => d.product.id === productId)
       if(detailFound){
         detailFound.quantity += 1
       }
     },
     //função que diminui quatidade de produto no carrinho
     decrement(productId){
-      const detailFound = this.details.find(d => d.id === productId)
+      const detailFound = this.details.find(d => d.product.id === productId)
       if(detailFound){
         detailFound.quantity -= 1
         if(detailFound.quantity === 0){
