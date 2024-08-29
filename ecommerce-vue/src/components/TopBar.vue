@@ -2,7 +2,7 @@
   <v-app-bar>
       <v-container class="fill-height d-flex align-center">
         <RouterLink to="/" custom v-slot="{ navigate }">
-          <v-btn prepend-icon="mdi-home-variant" :active="$route.name === 'home'" variant="text" @click="navigate"> Home </v-btn>
+          <v-btn prepend-icon="mdi-home-variant" :active="$route.name === 'home' || category" variant="text" @click="navigate"> Home </v-btn>
         </RouterLink>
         <RouterLink to="/cart" custom v-slot="{ navigate }">
           <v-badge color="orange" :content="itemsCount" :model-value="itemsCount > 0">
