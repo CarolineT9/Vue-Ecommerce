@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Cadeira",
+    "price": 700.0,
+    "image": "/public/cadeira_gamer.png",
+    "categoryId": 2
+  },
+  {
+    "id": 2,
+    "name": "Mouse",
+    "price": 10.0,
+    "image": "/public/mouse.png",
+    "categoryId": 1
+  },
+  {
+    "id": 3,
+    "name": "Monitor",
+    "price": 400.0,
+    "image": "/public/monitor.png",
+    "categoryId": 2
+  },
+  {
+    "id": 4,
+    "name": "Tablet",
+    "price": 120.0,
+    "image": "/public/tablet.png",
+    "categoryId": 2
+  },
+  {
+    "id": 5,
+    "name": "Teclado",
+    "price": 450.0,
+    "image": "/public/teclado.png",
+    "categoryId": 1
+  },
+  {
+    "id": 6,
+    "name": "Impressora",
+    "price": 900.0,
+    "image": "/public/impressora.png",
+    "categoryId": 2
+  }
+]

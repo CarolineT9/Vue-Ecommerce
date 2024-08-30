@@ -4,14 +4,7 @@ export const useProductsStore = defineStore('products',{
     state: ()=>({
         order: '',
         categoryId: null,
-        _products: [
-        { id: 1, name: 'Cadeira', price: 700.00, image: '/public/cadeira_gamer.png', categoryId: 2 },
-        { id: 2, name: 'Mouse', price: 10.00 , image: '/public/mouse.png', categoryId: 1},
-        { id: 3, name: 'Monitor', price: 400.00, image: '/public/monitor.png', categoryId: 2},
-        { id: 4, name: 'Tablet', price: 120.00, image: '/public/tablet.png', categoryId: 2 },
-        { id: 5, name: 'Teclado', price: 450.00, image:'/public/teclado.png', categoryId: 1},
-        { id: 6, name: 'Impressora', price: 900.00, image: '/public/impressora.png', categoryId: 2}
-      ]
+        _products: []
     }),
     getters:{
         products(state){
@@ -36,6 +29,13 @@ export const useProductsStore = defineStore('products',{
         }
     },
     actions: {
+        fetchProducts(){
+            fetch('/public/data/products.json')
+            .then(response => response.json())
+            .then((data) => {
+                this._products = data
+            })
+        },
         selectCategory(categoryId){
             this.categoryId = categoryId
         },

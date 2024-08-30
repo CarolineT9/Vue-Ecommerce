@@ -2,18 +2,7 @@ import { defineStore } from "pinia";
 
 export const useCategoriesStore = defineStore('categories', {
   state: () => ({
-    categories: [
-      {
-        id: 1,
-        name: 'Acessórios',
-        description: 'Acessórios de informática.',
-      },
-      {
-        id: 2,
-        name: 'Escritório',
-        description: 'Itens para seu escritório.',
-      },
-    ],
+    categories: []
     
   }),
   
@@ -22,6 +11,10 @@ export const useCategoriesStore = defineStore('categories', {
   },
 
   actions: {
-  
+    fetchCategories(){
+      fetch('/public/data/categories.json')
+      .then(response => response.json())
+      .then((data) => {this.categories = data})
+    }
   },
 });

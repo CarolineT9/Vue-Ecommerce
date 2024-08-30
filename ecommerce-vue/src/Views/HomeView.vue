@@ -21,22 +21,32 @@
 import ProductList from '../components/ProductList.vue'
 import { useProductsStore } from '../store/products'
 import LeftMenu from '../components/Left/LeftMenu.vue'
+import { useCategoriesStore } from '../store/categories'
 
 export default {
   components: { ProductList, LeftMenu },
 
 
   
-    beforeRouteEnter(to, from ){
+    beforeRouteEnter(to){
     console.log('beforeRouteEnter', to.params)
     const productsStore = useProductsStore()
     productsStore.selectCategory(to.params.categoryId)
   },
-  beforeRouteUpdate(to, from ){
+  beforeRouteUpdate(to){
         console.log('beforeRoute.update', to.params)
         const productsStore = useProductsStore()
         productsStore.selectCategory(to.params.categoryId)
     },
+    mounted(){
+      console.log('mounted')
+      const productsStore = useProductsStore()
+      productsStore.fetchProducts()
+
+      const categoriesStore = useCategoriesStore()
+      categoriesStore.fetchCategories()
+
+    }
 
 }
 </script>
