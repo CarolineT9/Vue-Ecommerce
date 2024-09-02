@@ -1,9 +1,9 @@
 // stores/cart.js
 import { defineStore } from 'pinia'
-
+import { useLocalStorage } from '@vueuse/core'
 export const useCartStore = defineStore('cart', {
   state: () => ({
-    details: []
+    details: useLocalStorage('cartDetail', [])
   }),
   getters:{
     // calcular um valor a partir de um estadoo...

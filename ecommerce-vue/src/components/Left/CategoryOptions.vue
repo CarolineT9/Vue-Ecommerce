@@ -5,6 +5,8 @@
             Todas
         </v-list-item-title>
     </v-list-item>
+    
+
     <v-list-item v-for="category in categories" :key="category.id" link>
         <v-list-item-title @click="goToCaterogy(category.id)">
             {{ category.name }}
