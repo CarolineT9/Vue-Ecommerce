@@ -1,9 +1,4 @@
 
-
-
-
-
-
 ## Funções:
   store/cart.js 
   Actions: 
@@ -13,12 +8,9 @@
   - decrement(productId) -> função que diminui a quantidade de produtos do carrinho
 
   Getters: 
-  cartItemsCount -> monitora a quantidade de itens do carrinho
-  totalAmount -> calcula o total a pagar baseado na quantidade de produtos do carrinho. 
+  - cartItemsCount -> monitora a quantidade de itens do carrinho
+  - totalAmount -> calcula o total a pagar baseado na quantidade de produtos do carrinho. 
 
-
-
-- products: `[{productId: 1, quantity: 3},{productId: 7, quantity: 5}]`
 
 ## Componentes
 
