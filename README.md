@@ -13,8 +13,15 @@
 
 
 ## Componentes
-
+### ShoppingCartItem
+### ShoppingCart
+### SummaryCart
+### CategoryOptions
+### LeftMenu
+### OrderOptions
 ### ProductCard
+### ProductList
+### TopBar
 
 ## Pages
 
